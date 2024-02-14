@@ -366,7 +366,7 @@ const slider3 = new Slider('slider3');
 
 //  get code button js 
 function goToGitHub() {
-    window.open("https://github.com/lokendra0906", "_blank");
+    window.open("https://github.com/Lokendra-Yadav9", "_blank");
 }
 
 
