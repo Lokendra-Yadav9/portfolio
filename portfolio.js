@@ -1,3 +1,15 @@
+window.addEventListener('load', function() {
+  // Hide loader
+  var loader = document.getElementById('loader');
+  loader.style.display = 'none';
+
+  // Show website content
+  var content = document.getElementById('main');
+  content.style.display = 'block';
+});
+
+
+
 //     theme change   
 document.addEventListener('DOMContentLoaded', function() {
     const toggleSwitch = document.querySelector('.l');
@@ -6,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add the checked attribute to the toggle switch
         toggleSwitch.checked = true;
     }
-
 
     toggleSwitch.addEventListener('change', function() {
         if (this.checked) {
@@ -26,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
 const newText = document.querySelector("#change-text");
 var typed = new Typed('#change-text', {
     strings: ["web developer", "java developer", "android developer", "cyber security", "progammmer"],
@@ -35,6 +47,7 @@ var typed = new Typed('#change-text', {
     loop: true
 }
 );
+
 
 
 function openPDF(){
@@ -370,8 +383,6 @@ function goToGitHub() {
 }
 
 
-
-
         //  certificates sliding 
 
 function initializeSliderDesktop(carouselElement) {
@@ -538,6 +549,44 @@ function initializeSlider(carouselElement) {
   
     startAutoSlide();
   }
+
+
+// Define the color variable
+const darkColor = '#122620';
+
+// Get all the text spans
+const textSpans = document.querySelectorAll('h1 span');
+
+// Add event listeners to each text span
+textSpans.forEach(span => {
+    span.addEventListener('mouseenter', (event) => {
+        const boundingRect = span.getBoundingClientRect();
+        const offsetX = (event.clientX - boundingRect.left - boundingRect.width / 2) / 2; // Adjust the offset as desired
+        const offsetY = (event.clientY - boundingRect.top - boundingRect.height / 2) / 2; // Adjust the offset as desired
+        
+        span.style.transition = 'transform 0.3s ease, color 0.3s ease'; // Smooth transition effect
+        span.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.2)`; // Move the word outside and zoom in
+        span.style.color = darkColor; // Set the font color using the variable
+        span.style.zIndex = '99999'; // Set the z-index to a high value
+
+        document.body.style.cursor = "url('../arrow/zzom2.png'), auto";
+
+    });
+
+    span.addEventListener('mouseleave', () => {
+        span.style.transition = 'transform 0.3s ease, color 0.3s ease'; // Smooth transition effect
+        span.style.transform = 'translate(0, 0) scale(1)'; // Reset position and zoom out
+        span.style.color = ''; // Reset the font color
+        span.style.zIndex = ''; // Reset the z-index
+        document.body.style.cursor = "auto";
+    });
+});
+
+
+
+
+
+
    
   // Media query for screens with a maximum width of 767px
   const mediaQuery = window.matchMedia('(max-width: 767px)');
@@ -551,7 +600,81 @@ function initializeSlider(carouselElement) {
     const carousel2 = document.querySelector(".carousel__cards2");
     initializeSlider(carousel2);
   }
- 
+
+function init() {
+  // Initialize Locomotive Scroll
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    smooth: true
+  });
+
+  // Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Update ScrollTrigger whenever Locomotive Scroll updates
+  locoScroll.on("scroll", ScrollTrigger.update);
+
+  // Use scrollerProxy for "#main" element since Locomotive Scroll is in control
+  ScrollTrigger.scrollerProxy("#main", {
+    scrollTop(value) {
+       return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    },
+    pinType: document.querySelector("#main").style.transform ? "transform" : false // Set pinType to false to avoid transforming the element
+  });
+
+  // Refresh ScrollTrigger and update Locomotive Scroll on window resize
+  window.addEventListener("resize", () => {
+    ScrollTrigger.refresh();
+    locoScroll.update();
+  });
+
+  // Refresh ScrollTrigger and update Locomotive Scroll after setup
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+  ScrollTrigger.refresh();
+}
+
+init();
+
+
+
+  //contact form bg 
+  
+var slide1_h1=document.querySelectorAll("#Contact #slide1-h1 h1");
+
+slide1_h1.forEach(function(elem){
+    gsap.to(elem,{
+        transform:"translateX(-100%)",
+        duration:4,
+        scrollTrigger:{
+            trigger:"#Contact",
+            scroller:"#main",
+            scrub:8,
+            // markers:true,
+            yoyo:true,
+        }
+    })
+})
+
+var slide2_h1=document.querySelectorAll("#Contact #slide2-h1 h1");
+
+slide2_h1.forEach(function(elem){
+    gsap.to(elem,{
+        transform:"translateX(0%)",
+        duration:4,
+        scrollTrigger:{
+            trigger:"#Contact",
+            scroller:"#main",
+            scrub:8,
+            // markers:true,
+            yoyo:true,
+        }
+    })
+})
+
+
 
   function showPopup() {
     // Create popup container if it doesn't exist
@@ -597,22 +720,6 @@ function initializeSlider(carouselElement) {
       }, 300); // Adjust timeout as needed
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -704,3 +811,85 @@ function backToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+
+
+
+
+
+function init() {
+  // Initialize Locomotive Scroll
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    // smooth: true
+  });
+
+  // Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Update ScrollTrigger whenever Locomotive Scroll updates
+  locoScroll.on("scroll", ScrollTrigger.update);
+
+  // Use scrollerProxy for "#main" element since Locomotive Scroll is in control
+  ScrollTrigger.scrollerProxy("#main", {
+    scrollTop(value) {
+       return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    },
+    pinType: document.querySelector("#main").style.transform ? "transform" : false // Set pinType to false to avoid transforming the element
+  });
+
+  // Refresh ScrollTrigger and update Locomotive Scroll on window resize
+  window.addEventListener("resize", () => {
+    ScrollTrigger.refresh();
+    locoScroll.update();
+  });
+
+  // Refresh ScrollTrigger and update Locomotive Scroll after setup
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+  ScrollTrigger.refresh();
+}
+
+init();
+
+
+
+  //contact form bg 
+  
+var slide1_h1=document.querySelectorAll("#Contact #slide1-h1 h1");
+
+slide1_h1.forEach(function(elem){
+    gsap.to(elem,{
+        transform:"translateX(-100%)",
+        duration:0.1,
+        scrollTrigger:{
+            trigger:"#Contact",
+            scroller:"#main",
+            scrub:1,
+            // markers:true,
+            yoyo:true,
+        }
+    })
+})
+
+var slide2_h1=document.querySelectorAll("#Contact #slide2-h1 h1");
+
+slide2_h1.forEach(function(elem){
+    gsap.to(elem,{
+        transform:"translateX(0%)",
+        duration:0.1,
+        scrollTrigger:{
+            trigger:"#Contact",
+            scroller:"#main",
+            scrub:1,
+            // markers:true,
+            yoyo:true,
+        }
+    })
+})
+
+
+
+
