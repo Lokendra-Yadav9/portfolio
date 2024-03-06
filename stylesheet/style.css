@@ -1581,7 +1581,7 @@ body {
 
 .rec-box .card .percent svg circle:nth-child(2) {
     stroke: var(--cir);
-    stroke-dasharray: calc(2.1 * (var(--num) / 100) * 100%);
+    stroke-dasharray: calc(1.8 * (var(--num) / 100) * 100%);
     stroke-dashoffset: calc(280 * var(--num) / 100);
     opacity: 0;
     animation: fadeIn 2s linear forwards;

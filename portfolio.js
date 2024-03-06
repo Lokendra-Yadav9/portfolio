@@ -636,43 +636,9 @@ function init() {
   ScrollTrigger.refresh();
 }
 
-init();
+// init();
 
 
-
-  //contact form bg 
-  
-var slide1_h1=document.querySelectorAll("#Contact #slide1-h1 h1");
-
-slide1_h1.forEach(function(elem){
-    gsap.to(elem,{
-        transform:"translateX(-100%)",
-        duration:4,
-        scrollTrigger:{
-            trigger:"#Contact",
-            scroller:"#main",
-            scrub:8,
-            // markers:true,
-            yoyo:true,
-        }
-    })
-})
-
-var slide2_h1=document.querySelectorAll("#Contact #slide2-h1 h1");
-
-slide2_h1.forEach(function(elem){
-    gsap.to(elem,{
-        transform:"translateX(0%)",
-        duration:4,
-        scrollTrigger:{
-            trigger:"#Contact",
-            scroller:"#main",
-            scrub:8,
-            // markers:true,
-            yoyo:true,
-        }
-    })
-})
 
 
 
@@ -858,38 +824,239 @@ init();
 
   //contact form bg 
   
-var slide1_h1=document.querySelectorAll("#Contact #slide1-h1 h1");
-
-slide1_h1.forEach(function(elem){
-    gsap.to(elem,{
-        transform:"translateX(-100%)",
-        duration:0.1,
-        scrollTrigger:{
-            trigger:"#Contact",
-            scroller:"#main",
-            scrub:1,
-            // markers:true,
-            yoyo:true,
-        }
-    })
-})
-
-var slide2_h1=document.querySelectorAll("#Contact #slide2-h1 h1");
-
-slide2_h1.forEach(function(elem){
-    gsap.to(elem,{
-        transform:"translateX(0%)",
-        duration:0.1,
-        scrollTrigger:{
-            trigger:"#Contact",
-            scroller:"#main",
-            scrub:1,
-            // markers:true,
-            yoyo:true,
-        }
-    })
-})
 
 
+gsap.from('.about-div', {
+  opacity: 0,
+  y: 150,
+  duration: 1,
+  scrollTrigger: {
+    trigger: '.about-div',
+    start: 'top 80%',
+    end: '+=100',
+    toggleActions: 'play none none reverse',
+    scrub:1,
+    // markers:true,
+    yoyo:true,
+  }
+});
 
 
+gsap.utils.toArray('.Services-box').forEach(box => {
+  gsap.from(box, {
+    opacity: 0,
+    y: 150,
+    duration: 0.1,
+    scrollTrigger: {
+      trigger: box,
+      start: 'top 80%',
+      end: '+=100',
+      toggleActions: 'play none none reverse',
+      // markers:true,
+      yoyo:true,
+    }
+  });
+});
+
+
+
+gsap.from('#slider1', {
+  opacity: 0,
+  x: 150,
+  duration: 1,
+  scrollTrigger: {
+    trigger: '#slider1',
+    start: 'top 80%',
+    end: '+=100',
+    toggleActions: 'play none none reverse',
+    scrub:1,
+    // markers:true,
+    yoyo:true,
+  }
+},"computer");
+
+
+gsap.from('#t1', {
+  opacity: 0,
+  x: -150,
+  duration: 1,
+  scrollTrigger: {
+    trigger: '#t1',
+    start: 'top 80%',
+    end: '+=100',
+    toggleActions: 'play none none reverse',
+    scrub:1,
+    // markers:true,
+    yoyo:true,
+  }
+},"computer");
+
+
+gsap.from('#slider2', {
+  opacity: 0,
+  x: 150,
+  duration: 1,
+  scrollTrigger: {
+    trigger: '#slider2',
+    start: 'top 80%',
+    end: '+=100',
+    toggleActions: 'play none none reverse',
+    scrub:3,
+    // markers:true,
+    yoyo:true,
+  }
+},"computer1");
+
+gsap.from('#t2', {
+  opacity: 0,
+  x: -150,
+  duration: 1,
+  scrollTrigger: {
+    trigger: '#t2',
+    start: 'top 80%',
+    end: '+=100',
+    toggleActions: 'play none none reverse',
+    scrub:3,
+    // markers:true,
+    yoyo:true,
+  }
+},"computer1");
+
+
+gsap.from('#slider3', {
+  opacity: 0,
+  y: 150,
+  duration: 1,
+  scrollTrigger: {
+    trigger: '#slider3',
+    start: 'top 80%',
+    end: '+=100',
+    toggleActions: 'play none none reverse',
+    scrub:3,
+    // markers:true,
+    yoyo:true,
+  }
+},"computer3");
+
+gsap.from('#t3', {
+  opacity: 0,
+  y: 150,
+  duration: 1,
+  scrollTrigger: {
+    trigger: '#t3',
+    start: 'top 80%',
+    end: '+=100',
+    toggleActions: 'play none none reverse',
+    scrub:3,
+    // markers:true,
+    yoyo:true,
+  }
+},"computer3");
+
+
+
+// skill box gsap 
+function animateRecBoxes() {
+  gsap.utils.toArray('.rec-box .card:nth-child(even)').forEach(box => {
+    gsap.from(box, {
+      opacity: 0,
+      y: -50,
+      duration: 0.1,
+      scrollTrigger: {
+        trigger:".card",
+        start: 'top 80%',
+        end: '+=100',
+        toggleActions: 'play none none reverse',
+        scrub:1,
+    // markers:true,
+    yoyo:true,
+      }
+    });
+  },"recBox");
+
+  gsap.utils.toArray('.rec-box .card:nth-child(odd)').forEach(box => {
+    gsap.from(box, {
+      opacity: 0,
+      y: 50,
+      duration: 0.1,
+      scrollTrigger: {
+        trigger:".card",
+        start: 'top 80%',
+        end: '+=100',
+        toggleActions: 'play none none reverse',
+        scrub:1,
+    // markers:true,
+    yoyo:true,
+      }
+    },"recBox");
+  });
+}
+
+// Call the function to animate the rec-box elements
+animateRecBoxes();
+
+
+
+// cirtificates
+gsap.utils.toArray('.carousel__card').forEach(card => {
+  gsap.from(card, {
+    scale: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: card,
+      start: 'top 80%',
+      end: '+=100',
+      toggleActions: 'play none none reverse'
+    }
+  });
+});
+
+
+  //contact form bg 
+
+
+
+// company logos
+gsap.utils.toArray('.c-logo').forEach(logo => {
+  gsap.from(logo, {
+    opacity: 0,
+    scale: 0.5,
+    rotation: Math.random() * 360 - 180,
+    duration: 1.5,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: logo,
+      start: 'top 80%',
+      end: '+=100',
+      toggleActions: 'play none none reverse'
+    }
+  });
+});
+
+
+
+gsap.utils.toArray("#Contact #slide2-h1 h1").forEach(function(elem) {
+  gsap.to(elem, {
+    x: "0%",
+    duration: 4,
+    scrollTrigger: {
+      trigger: "#Contact",
+      // scroller: "#main",
+      scrub: 8,
+      // markers: true,
+      yoyo: true,
+    }
+  });
+});
+
+gsap.utils.toArray("#Contact #slide1-h1 h1").forEach(function(elem) {
+  gsap.to(elem, {
+    x: "-100%",
+    duration: 4,
+    scrollTrigger: {
+      trigger: "#Contact",
+      scrub: 8,
+      yoyo: true,
+    }
+  });
+});
