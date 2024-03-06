@@ -862,7 +862,7 @@ gsap.utils.toArray('.Services-box').forEach(box => {
 
 gsap.from('#slider1', {
   opacity: 0,
-  x: 150,
+  x: 50,
   duration: 1,
   scrollTrigger: {
     trigger: '#slider1',
@@ -878,7 +878,7 @@ gsap.from('#slider1', {
 
 gsap.from('#t1', {
   opacity: 0,
-  x: -150,
+  x: -50,
   duration: 1,
   scrollTrigger: {
     trigger: '#t1',
