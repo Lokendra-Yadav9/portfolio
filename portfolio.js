@@ -783,42 +783,88 @@ function backToTop() {
 
 
 
+// function init() {
+//   // Initialize Locomotive Scroll
+//   const locoScroll = new LocomotiveScroll({
+//     el: document.querySelector("#main"),
+//     // smooth: true
+//   });
+
+//   // Register ScrollTrigger plugin
+//   gsap.registerPlugin(ScrollTrigger);
+
+//   // Update ScrollTrigger whenever Locomotive Scroll updates
+//   locoScroll.on("scroll", ScrollTrigger.update);
+
+//   // Use scrollerProxy for "#main" element since Locomotive Scroll is in control
+//   ScrollTrigger.scrollerProxy("#main", {
+//     scrollTop(value) {
+//        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+//     },
+//     getBoundingClientRect() {
+//       return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+//     },
+//     pinType: document.querySelector("#main").style.transform ? "transform" : false // Set pinType to false to avoid transforming the element
+//   });
+
+//   // Refresh ScrollTrigger and update Locomotive Scroll on window resize
+//   window.addEventListener("resize", () => {
+//     ScrollTrigger.refresh();
+//     locoScroll.update();
+//   });
+
+//   // Refresh ScrollTrigger and update Locomotive Scroll after setup
+//   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+//   ScrollTrigger.refresh();
+// }
+
+// init();
+
+
+
+
+
 function init() {
-  // Initialize Locomotive Scroll
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector("#main"),
-    // smooth: true
-  });
+  // Check viewport dimensions
+  if (window.innerWidth >= 767 && window.innerHeight >= 700) {
+    // Initialize Locomotive Scroll
+    const locoScroll = new LocomotiveScroll({
+      el: document.querySelector("#main"),
+      // smooth: true
+    });
 
-  // Register ScrollTrigger plugin
-  gsap.registerPlugin(ScrollTrigger);
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
 
-  // Update ScrollTrigger whenever Locomotive Scroll updates
-  locoScroll.on("scroll", ScrollTrigger.update);
+    // Update ScrollTrigger whenever Locomotive Scroll updates
+    locoScroll.on("scroll", ScrollTrigger.update);
 
-  // Use scrollerProxy for "#main" element since Locomotive Scroll is in control
-  ScrollTrigger.scrollerProxy("#main", {
-    scrollTop(value) {
-       return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-    },
-    pinType: document.querySelector("#main").style.transform ? "transform" : false // Set pinType to false to avoid transforming the element
-  });
+    // Use scrollerProxy for "#main" element since Locomotive Scroll is in control
+    ScrollTrigger.scrollerProxy("#main", {
+      scrollTop(value) {
+         return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+      },
+      getBoundingClientRect() {
+        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+      },
+      pinType: document.querySelector("#main").style.transform ? "transform" : false // Set pinType to false to avoid transforming the element
+    });
 
-  // Refresh ScrollTrigger and update Locomotive Scroll on window resize
-  window.addEventListener("resize", () => {
+    // Refresh ScrollTrigger and update Locomotive Scroll on window resize
+    window.addEventListener("resize", () => {
+      ScrollTrigger.refresh();
+      locoScroll.update();
+    });
+
+    // Refresh ScrollTrigger and update Locomotive Scroll after setup
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
     ScrollTrigger.refresh();
-    locoScroll.update();
-  });
 
-  // Refresh ScrollTrigger and update Locomotive Scroll after setup
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-  ScrollTrigger.refresh();
-}
+    // Your GSAP animations and ScrollTrigger effects go here
+    // ...
+  }
 
-init();
+
 
 
 
@@ -836,7 +882,7 @@ gsap.from('.about-div', {
     end: '+=100',
     toggleActions: 'play none none reverse',
     scrub:1,
-    // markers:true,
+    markers:true,
     yoyo:true,
   }
 });
@@ -1060,3 +1106,14 @@ gsap.utils.toArray("#Contact #slide1-h1 h1").forEach(function(elem) {
     }
   });
 });
+
+}
+
+if (window.innerWidth >= 767) {
+  // Your code for viewport width less than or equal to 767 pixels goes here
+  init();
+} else {
+  // Your code for viewport width greater than 767 pixels goes here
+}
+
+
