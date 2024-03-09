@@ -569,8 +569,6 @@ textSpans.forEach(span => {
         span.style.color = darkColor; // Set the font color using the variable
         span.style.zIndex = '99999'; // Set the z-index to a high value
 
-        document.body.style.cursor = "url('../arrow/zzom2.png'), auto";
-
     });
 
     span.addEventListener('mouseleave', () => {
@@ -578,7 +576,6 @@ textSpans.forEach(span => {
         span.style.transform = 'translate(0, 0) scale(1)'; // Reset position and zoom out
         span.style.color = ''; // Reset the font color
         span.style.zIndex = ''; // Reset the z-index
-        document.body.style.cursor = "auto";
     });
 });
 
@@ -862,7 +859,7 @@ function init() {
 
     // Your GSAP animations and ScrollTrigger effects go here
     // ...
-  }
+  
 
 
 
@@ -882,7 +879,7 @@ gsap.from('.about-div', {
     end: '+=100',
     toggleActions: 'play none none reverse',
     scrub:1,
-    markers:true,
+    // markers:true,
     yoyo:true,
   }
 });
@@ -1106,14 +1103,13 @@ gsap.utils.toArray("#Contact #slide1-h1 h1").forEach(function(elem) {
     }
   });
 });
-
+  }
 }
 
 if (window.innerWidth >= 767) {
-  // Your code for viewport width less than or equal to 767 pixels goes here
   init();
 } else {
-  // Your code for viewport width greater than 767 pixels goes here
+
 }
 
 
