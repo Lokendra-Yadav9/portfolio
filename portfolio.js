@@ -49,12 +49,9 @@ var typed = new Typed('#change-text', {
 );
 
 
-
 function openPDF(){
     window.open('imp pdf files/Lokendra_resume perfect Recent.pdf','_blank');
 }
-
-
 
 
 
@@ -1119,10 +1116,10 @@ if (window.innerWidth >= 767) {
 }
 
 
-$('a').on('click', function(event) {
-  event.preventDefault();
-  $('html, body').animate({ scrollTop: $(this.hash).offset().top }, 800);
-});
+// $('a').on('click', function(event) {
+//   event.preventDefault();
+//   $('html, body').animate({ scrollTop: $(this.hash).offset().top }, 800);
+// });
 
 
 

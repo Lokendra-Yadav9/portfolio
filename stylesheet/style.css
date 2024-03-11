@@ -135,6 +135,10 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+#logo-div{
+    /* border: 3px solid purple; */
+}
+
 #logo-div a {
     text-decoration: none;
 }
@@ -167,7 +171,6 @@ body {
     font-family: Aubrey,'Times New Roman', Times, serif;
     color: var(--secindary-black-purple);
 }
-
 
 
 #take_tour {
@@ -362,9 +365,9 @@ body {
     align-items: center;
     box-shadow: var(--header-box-shadow-black) 0px 1.9vw 3.8vw, var(--header-box-shadow-black) 0px 1.5vw 1.2vw;
     gap: 6vw;
-    border-radius: 5px;
+    border-radius: 0.5vw;
     z-index: 9;
-    padding: 1.5vw 0;
+    padding: 1.5vw 0;     
 }
 
 .content-left {
@@ -482,7 +485,7 @@ body {
     object-fit: cover;
     /* filter: var(--filter-head-image); */
     display: block;
-    border-radius: 2% 20%;
+    /* border-radius: 2% 20%; */
     transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -527,7 +530,6 @@ body {
     width: 100%;
     opacity: 0;
 }
-
 
 
 .btn-1 {
@@ -2169,7 +2171,7 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     color: var(--primary-bg1);
-    font-size: 3vw;
+    font-size: 2.7vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2179,19 +2181,26 @@ body {
     font-weight: 800;
 }
 
-.waviy {
+  .waviy {
     position: relative;
+    -webkit-box-reflect: below -1.8vw linear-gradient(transparent, rgba(0, 0, 0, 0.74));
   }
   .waviy span {
+    font-family:Aubrey, cursive;
     position: relative;
     display: inline-block;
-    font-family: Aubrey,'Times New Roman', Times, serif;
-    animation: flip 4s infinite;
-    animation-delay: calc(.3s * var(--i))
+    color: var(--primary-bg1);
+    text-transform: uppercase;
+    animation: waviy 2s infinite;
+    animation-delay: calc(.1s * var(--i));
+    
   }
-  @keyframes flip {
-    0%,80% {
-      transform: rotateY(360deg) 
+  @keyframes waviy {
+    0%,40%,100% {
+      transform: translateY(0)
+    }
+    20% {
+      transform: translateY(-1.8vw)
     }
   }
 
