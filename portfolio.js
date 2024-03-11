@@ -806,51 +806,6 @@ function backToTop() {
 }
 
 
-
-
-
-
-// function init() {
-//   // Initialize Locomotive Scroll
-//   const locoScroll = new LocomotiveScroll({
-//     el: document.querySelector("#main"),
-//     // smooth: true
-//   });
-
-//   // Register ScrollTrigger plugin
-//   gsap.registerPlugin(ScrollTrigger);
-
-//   // Update ScrollTrigger whenever Locomotive Scroll updates
-//   locoScroll.on("scroll", ScrollTrigger.update);
-
-//   // Use scrollerProxy for "#main" element since Locomotive Scroll is in control
-//   ScrollTrigger.scrollerProxy("#main", {
-//     scrollTop(value) {
-//        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-//     },
-//     getBoundingClientRect() {
-//       return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-//     },
-//     pinType: document.querySelector("#main").style.transform ? "transform" : false // Set pinType to false to avoid transforming the element
-//   });
-
-//   // Refresh ScrollTrigger and update Locomotive Scroll on window resize
-//   window.addEventListener("resize", () => {
-//     ScrollTrigger.refresh();
-//     locoScroll.update();
-//   });
-
-//   // Refresh ScrollTrigger and update Locomotive Scroll after setup
-//   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-//   ScrollTrigger.refresh();
-// }
-
-// init();
-
-
-
-
-
 function init() {
   // Check viewport dimensions
   if (window.innerWidth >= 767 && window.innerHeight >= 700) {
@@ -887,18 +842,8 @@ function init() {
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
     ScrollTrigger.refresh();
 
-    // Your GSAP animations and ScrollTrigger effects go here
-    // ...
-  
-
-
-
-
 
   //contact form bg 
-  
-
-
 gsap.from('.about-div', {
   opacity: 0,
   y: 150,
@@ -1143,8 +1088,19 @@ if (window.innerWidth >= 767) {
 }
 
 
-
 $('a').on('click', function(event) {
   event.preventDefault();
   $('html, body').animate({ scrollTop: $(this.hash).offset().top }, 800);
+});
+
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
 });
