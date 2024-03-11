@@ -55,6 +55,9 @@ function openPDF(){
 }
 
 
+
+
+
 const driver = window.driver.js.driver;
 const driverObj = driver({
     popoverClass: 'driverjs-theme',
@@ -226,6 +229,34 @@ document.querySelector('#take_tour').addEventListener("click",()=>{
 })
 
 
+
+
+// Get all slide elements
+var slides = document.querySelectorAll('.sliding');
+var slideIndex = 0;
+
+// Function to show slides
+function showSlides() {
+    // Hide all slides
+    slides.forEach(function(slide) {
+        slide.style.opacity = 0;
+    });
+
+    // Show the current slide
+    slides[slideIndex].style.opacity = 1;
+
+    // Move to the next slide
+    slideIndex++;
+    if (slideIndex >= slides.length) {
+        slideIndex = 0;
+    }
+
+    // Repeat every 9 seconds (adjust as needed)
+    setTimeout(showSlides, 9000);
+}
+
+// Call the function to start the slideshow
+showSlides();
 
 
 
@@ -1103,4 +1134,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           behavior: 'smooth'
       });
   });
+});
+
+const phoneNumber = "+917471172041";
+const qrCodeElement = document.getElementById("qrcode");
+
+// Generate the QR code using the QRCode.js library
+new QRCode(qrCodeElement, {
+    text: "tel:" + phoneNumber,
+    // width:100,
+    // height: 100
 });
