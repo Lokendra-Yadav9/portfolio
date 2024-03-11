@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
     -webkit-tap-highlight-color: transparent;
     /* Safari, iOS */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -95,7 +95,7 @@ body {
     scroll-behavior: smooth;
     user-select: none;
     overflow-x: hidden;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 
@@ -164,7 +164,7 @@ body {
 
 .logo span {
     font-size: 1.8vw;
-    font-family: Aubrey;
+    font-family: Aubrey,'Times New Roman', Times, serif;
     color: var(--secindary-black-purple);
 }
 
@@ -431,7 +431,7 @@ body {
     line-height: 1.9vw;
     width: 35vw;
     text-align: justify;
-    font-family: edmundsbury-serif, sans-serif;
+    font-family: edmundsbury-serif, 'Times New Roman', Times, serif;
 }
 
 
@@ -887,14 +887,14 @@ body {
 .about-content #greeting {
     font-size: 2.5vw;
     display: block;
-    font-family: glamore-1, sans-serif;
+    font-family: glamore-1,'Times New Roman', Times, serif;
 }
 
 .about-content #name {
     font-size: 2vw;
     text-transform: uppercase;
     color: #F4EBD0;
-    font-family: billie-eilish, sans-serif;
+    font-family: billie-eilish, 'Times New Roman', Times, serif;
 }
 
 .about-content span {
@@ -904,7 +904,7 @@ body {
 .about-content p {
     line-height: 1.6vw;
     font-size: 1.25vw;
-    font-family: Edmundsbury Serif;
+    font-family: 'Times New Roman', Times, serif ;
     font-weight: 400;
     text-align: justify;
 }
@@ -930,7 +930,7 @@ body {
     font-size: 1.2vw;
     background: var(--secondary-header-plet);
     border: none;
-    font-family: glamore-1, sans-serif;
+    font-family: glamore-1, 'Times New Roman', Times, serif;
     color: #122620;
     box-shadow: 3px 3px 5px 2px rgb(22, 22, 22);
     cursor: pointer;
@@ -971,7 +971,7 @@ body {
 .text-container>div strong {
     font-size: 1.5vw;
     margin: 2vw 0;
-    font-family: billie-eilish, sans-serif;
+    font-family: billie-eilish, 'Times New Roman', Times, serif;
 }
 
 #text-exp {
@@ -1010,7 +1010,7 @@ body {
     align-items: center;
     text-align: center;
     line-height: 2.3vw;
-    font-family: edmundsbury-serif;
+    font-family: edmundsbury-serif,'Times New Roman', Times, serif;
     background: linear-gradient(45deg, #f4fb94, #f2eaea, #f4fb94);
     text-transform: uppercase;
     -webkit-text-fill-color: transparent;
@@ -1082,7 +1082,7 @@ body {
     color: white;
     line-height: 1.3vw;
     font-size: 1.1vw;
-    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
     padding: 0.3vw 1.5vw 0.5vw;
     margin: 1vw 0;
     text-align: justify;
@@ -1117,7 +1117,7 @@ body {
     box-sizing: border-box;
     color: #060606;
     display: inline-block;
-    font-family: gilroy, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: gilroy, 'Times New Roman', Times, serif;
     line-height: 1vw;
     outline: none;
     padding: 0.2vw;
@@ -1176,7 +1176,7 @@ body {
     font-size: 1.8vw;
     font-weight: 600;
     letter-spacing: 1px;
-    font-family: billie-eilish;
+    font-family: billie-eilish,'Times New Roman', Times, serif;
     text-transform: capitalize;
 }
 
@@ -1204,7 +1204,7 @@ body {
     padding: 0.6vw 1.6vw;
     background-color: var(--secindary-black-purple);
     color: white;
-    font-family: sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
     font-size: 0.8vw;
     text-align: center;
@@ -1325,7 +1325,7 @@ body {
     position: absolute;
     color: rgb(177, 177, 177);
     font-size: 1.1vw;
-    font-family: 'Nova Round', system-ui;
+    font-family: 'Nova Round','Times New Roman', Times, serif;
     top: 83%;
     left: 45%;
 }
@@ -1341,7 +1341,7 @@ body {
     border-radius: 50%;
     border: 0.1vw double rgb(40, 31, 31);
     background-color: rgb(45, 45, 45);
-    font-family: 'Nova Round', system-ui;
+    font-family: 'Nova Round', 'Times New Roman', Times, serif;
 }
 
 .keyboard {
@@ -1559,7 +1559,7 @@ body {
 
 .lang-name h1 {
     font-size: 1.4vw;
-    font-family: billie-eilish;
+    font-family: billie-eilish,'Times New Roman', Times, serif;
     letter-spacing: 0.2vw;
     font-weight: 300;
 }
@@ -1730,7 +1730,7 @@ body {
 }
 
 #certificates {
-    font-family: sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #certificates>h1 {
@@ -1761,7 +1761,7 @@ body {
     color: white;
     font-size: 1.4vw;
     padding: 0.3vw 0;
-    font-family: Billie Eilish;
+    font-family: Billie Eilish,'Times New Roman', Times, serif;
     letter-spacing: 0.2vw;
     text-transform: uppercase;
     font-weight: 800;
@@ -2187,7 +2187,7 @@ body {
     justify-content: center;
     text-align: center;
     text-shadow: 0.7vw 0.5vw 0.9vw rgba(0, 0, 0, 0.289);
-    font-family: Aubrey;
+    font-family: Aubrey,'Times New Roman', Times, serif;
     font-weight: 800;
 }
 
@@ -2197,7 +2197,7 @@ body {
   .waviy span {
     position: relative;
     display: inline-block;
-    font-family: Aubrey;
+    font-family: Aubrey,'Times New Roman', Times, serif;
     animation: flip 4s infinite;
     animation-delay: calc(.3s * var(--i))
   }
@@ -2461,6 +2461,7 @@ body {
 
     html {
         scroll-behavior: smooth;
+        font-family: 'Times New Roman', Times, serif;
     }
 
     body {
@@ -2608,7 +2609,6 @@ body {
         width: 100%;
         margin-top: 1.2rem;
         padding: 0.5rem;
-        border: 2px solid rebeccapurple;
     }
 
     .social-media {
@@ -2728,7 +2728,7 @@ body {
         line-height: 2vh;
         color: #ffffffc6;
         font-size: 1.8vh;
-        font-family:'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family:'Times New Roman', Times, serif;
     }
 
 
@@ -3387,6 +3387,13 @@ body {
     }
 
 
+    .waviy span {
+        font-family: Aubrey,'Times New Roman', Times, serif;
+        text-transform: uppercase;
+      }
+
+
+
     .button-89:hover,
     .button-89:focus-visible {
         --_p: 0rem;
@@ -3400,33 +3407,10 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .driver-popover.driverjs-theme {
-    background-color: #fde047;
-    color: #000;
+    background-color: var(--primary-color);
+    /* color: var(--secondary-header-plet); */
+    color: white;
 }
 
 .driver-popover.driverjs-theme .driver-popover-title {
@@ -3436,7 +3420,7 @@ body {
 .driver-popover.driverjs-theme .driver-popover-title,
 .driver-popover.driverjs-theme .driver-popover-description,
 .driver-popover.driverjs-theme .driver-popover-progress-text {
-    color: #000;
+    color: var(--secondary-header-plet);
 }
 
 .driver-popover.driverjs-theme button {
@@ -3463,7 +3447,9 @@ body {
 }
 
 .driver-popover.driverjs-theme .driver-popover-close-btn {
-    border-radius: 0;
+    /* border-radius: 0; */
+    border: none;
+    background: transparent;
     color: #ffffff;
 }
 

@@ -189,6 +189,36 @@ const driverObj = driver({
                 align: 'start'
             }
         },
+        {
+            element: '#certificates-container',
+            popover:
+            {
+                title: 'My certificates',
+                description: "Explore my certifications showcase, a testament to my expertise and dedication in various domains. Browse and be inspired",
+                side: "bottom", 
+                align: 'start'
+            }
+        },
+        {
+            element: '.logos-container',
+            popover:
+            {
+                title: 'My Distinguished Partners',
+                description: "Discover the esteemed companies I've collaborated with, whose logos adorn this section, showcasing mutual success and fruitful partnerships.",
+                side: "top", 
+                align: 'start'
+            }
+        },
+        {
+            element: '#slide1-h1',
+            popover:
+            {
+                title: 'Expertise & Proficiencies',
+                description: "Explore my diverse skill set, ranging from Java and web development to cybersecurity and competitive programming, honed through hands-on experience.",
+                side: "top", 
+                align: 'center'
+            }
+        },
     ]
 });
 document.querySelector('#take_tour').addEventListener("click",()=>{
