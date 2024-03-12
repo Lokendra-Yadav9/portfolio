@@ -1,3 +1,4 @@
+
 window.addEventListener('load', function() {
   // Hide loader
   var loader = document.getElementById('loader');
@@ -1106,6 +1107,7 @@ gsap.utils.toArray("#Contact #slide1-h1 h1").forEach(function(elem) {
     }
   });
 });
+
   }
 }
 
@@ -1139,6 +1141,7 @@ const qrCodeElement = document.getElementById("qrcode");
 // Generate the QR code using the QRCode.js library
 new QRCode(qrCodeElement, {
     text: "tel:" + phoneNumber,
-    // width:100,
-    // height: 100
 });
+
+
+
