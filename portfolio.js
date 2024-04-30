@@ -51,7 +51,7 @@ var typed = new Typed('#change-text', {
 
 
 function openPDF(){
-    window.open('imp pdf files/Lokendra_resume perfect Recent.pdf','_blank');
+    window.open('imp pdf files/Lokendra_resume perfect Recent2.12.pdf','_blank');
 }
 
 
